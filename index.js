@@ -21,7 +21,7 @@ const App=()=>{
   
   return(
     <div className='app'>
-    {!user? <div><button type="button" className="btn btn-outline-primary m-5" onClick={register} >Register</button><button type="button" onClick={login} className="btn btn-outline-info m-5">Login</button></div> : <button type="button" onClick={logout} className="btn btn-outline-primary">Logout</button>}
+    {!user? <div><button type="button" className="btn btn-outline-primary m-5" onClick={register} >Register</button><button type="button" onClick={login} className="btn btn-outline-info m-5">Login</button></div> : <button type="button" onClick={logout} className="btn btn-outline-danger">Logout</button>}
     </div>)
   
   
