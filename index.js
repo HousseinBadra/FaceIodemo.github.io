@@ -7,7 +7,7 @@ const App=()=>{
   function login(){
     io.authenticate({ "locale": "auto"  }).then(userData => { console.log("Success, user identified") 
     console.log("Linked facial Id: " + userData.facialId)
-    setuser(userData.payload.UID)  }).catch(errCode => { console.log(errCode) })
+    setuser(userData.payload.UID)  }).catch(errCode => { console.log(errCode);window.location='./' })
   }
   function logout(){
     setuser('')
@@ -16,7 +16,7 @@ const App=()=>{
   function register(){
     io.enroll({ "locale": "auto", 
     "payload": {  UID: Date.now() } }
-    ).then(userInfo => {  alert( `User Successfully Enrolled! Details: Unique Facial ID: ${userInfo.facialId} Enrollment Date: ${userInfo.timestamp} Gender: ${userInfo.details.gender} Age Approximation: ${userInfo.details.age}` ); console.log(userInfo);window.location='./';}).catch(errCode => { console.log(errCodr) })
+    ).then(userInfo => {  alert( `User Successfully Enrolled! Details: Unique Facial ID: ${userInfo.facialId} Enrollment Date: ${userInfo.timestamp} Gender: ${userInfo.details.gender} Age Approximation: ${userInfo.details.age}` ); console.log(userInfo);window.location='./';}).catch(errCode => { console.log(errCodr); window.location='./' })
   }
   
   return(
