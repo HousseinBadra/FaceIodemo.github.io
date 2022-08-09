@@ -16,7 +16,7 @@ const App=()=>{
   function register(){
     io.enroll({ "locale": "auto", 
     "payload": {  UID: Date.now() } }
-    ).then(userInfo => {  alert( `User Successfully Enrolled! Details: Unique Facial ID: ${userInfo.facialId} Enrollment Date: ${userInfo.timestamp} Gender: ${userInfo.details.gender} Age Approximation: ${userInfo.details.age}` ); console.log(userInfo);}).catch(errCode => { console.log(errCodr) })
+    ).then(userInfo => {  alert( `User Successfully Enrolled! Details: Unique Facial ID: ${userInfo.facialId} Enrollment Date: ${userInfo.timestamp} Gender: ${userInfo.details.gender} Age Approximation: ${userInfo.details.age}` ); console.log(userInfo);window.location='./';}).catch(errCode => { console.log(errCodr) })
   }
   
   return(
